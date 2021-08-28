@@ -82,7 +82,7 @@ namespace Laboraatorio1.Controllers
             
         }
 
-        
+
         //public ActionResult Resultado(String Nombre, String lab1, String lab2, String lab3, String par1, String par2, String par3)
         //{
 
@@ -94,6 +94,7 @@ namespace Laboraatorio1.Controllers
         //    //Double Par2 = Convert.ToDouble(par2);
         //    //Double Par3 = Convert.ToDouble(par3);
 
+
         //    ViewBag.Nombre = Nombre;
         //    ViewBag.lab1 = (Lab1 * 0.4);
         //    ViewBag.lab2 = (Lab2 * 0.4);
@@ -101,11 +102,14 @@ namespace Laboraatorio1.Controllers
         //    ViewBag.par1 = (Par1 * 0.6);
         //    ViewBag.par2 = (Par2 * 0.6);
         //    ViewBag.par3 = (Par3 * 0.6);
+        //Double Periodo1 = ((Laboratorio1 + Parcial1) / 3);
+        //Double Periodo2 = ((Laboratorio2 + Parcial2) / 3);
+        //Double PeriodoFinal = (Periodo1 + Periodo2 + Periodo3);
 
 
 
         //    return View();
         //}
 
-    }  
+    }
 }
