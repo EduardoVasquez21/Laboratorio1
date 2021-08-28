@@ -16,7 +16,7 @@
 </style>
 
 
-@using (Html.BeginForm("Save", "Notas", FormMethod.Post))
+@using (Html.BeginForm("Resultado", "Notas", FormMethod.Post))
 {
     <br>
     <label for="Nombre">Nombre de estudiante</label>
@@ -46,7 +46,7 @@
 
     <label for="par2">Parcial 2</label>
     <br>
-    <input type="number" step="any"  name="par2" required placeholder="Escribe tu nota" value="">
+    <input type="number" step="any" name="par2" required placeholder="Escribe tu nota" value="">
     <br>
 
     <label for="par3">Parcial 3</label>
@@ -55,6 +55,8 @@
     <br>
 
     <input type="submit">
+    <br>
+
     <br>
     <br />
 }

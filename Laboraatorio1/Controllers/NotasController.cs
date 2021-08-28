@@ -17,8 +17,44 @@ namespace Laboraatorio1.Controllers
         }
 
         [HttpPost]
-        public ActionResult Save(String Nombre, String lab1, String lab2, String lab3, String par1, String par2, String par3)
+        public ActionResult Resultado(String Nombre, String lab1, String lab2, String lab3, String par1, String par2, String par3)
         {
+            string nombre = Nombre;
+            Double Lab1 = Convert.ToDouble(lab1);
+            Double Lab2 = Convert.ToDouble(lab2);
+            Double Lab3 = Convert.ToDouble(lab3);
+            Double Par1 = Convert.ToDouble(par1);
+            Double Par2 = Convert.ToDouble(par2);
+            Double Par3 = Convert.ToDouble(par3);
+
+            
+            Double Laboratorio1 = (Lab1 * 0.40);
+            Double Parcial1 = (Par1 * 0.60);
+            Double Periodo1 = ((Laboratorio1 + Parcial1) / 3);
+            Double Laboratorio2 = (Lab2 * 0.40);
+            Double Parcial2 = (Par2 * 0.60);
+            Double Periodo2 = ((Laboratorio2 + Parcial2) / 3);
+            Double Laboratorio3 = (Lab3 * 0.40); 
+            Double Parcial3 = (Par2 * 0.60);
+            Double Periodo3 = ((Laboratorio3 + Parcial3) / 3);
+            Double PeriodoFinal = (Periodo1 + Periodo2 + Periodo3);
+
+            ViewBag.Nombre = nombre;
+            ViewBag.lab1 = Laboratorio1;
+            ViewBag.par1 = Parcial1;
+            ViewBag.promedi1 = Periodo1;
+            ViewBag.lab2 = Laboratorio2;
+            ViewBag.par2 = Parcial2;
+            ViewBag.promedi2 = Periodo2;
+            ViewBag.lab3 = Laboratorio3;
+            ViewBag.par3 = Parcial3;
+            ViewBag.promedi3 = Periodo3;
+            ViewBag.Pf = PeriodoFinal;
+
+
+
+
+
             using (EstudianteEntities estudiante = new EstudianteEntities())
             {
                 TblNotasEstudiante Est = new TblNotasEstudiante();
@@ -33,7 +69,7 @@ namespace Laboraatorio1.Controllers
                 estudiante.SaveChanges();
             }
 
-                return Redirect("/Notas/Resultado");
+            return View();
         }
 
         public ActionResult Historial()
@@ -47,29 +83,29 @@ namespace Laboraatorio1.Controllers
         }
 
         
-        public ActionResult Resultado(String Nombre, String lab1, String lab2, String lab3, String par1, String par2, String par3)
-        {
+        //public ActionResult Resultado(String Nombre, String lab1, String lab2, String lab3, String par1, String par2, String par3)
+        //{
 
-            //_ = Nombre;
-            Double Lab1 = Convert.ToInt32(lab1);
-            Double Lab2 = Convert.ToDouble(lab2);
-            Double Lab3 = Convert.ToDouble(lab3);
-            Double Par1 = Convert.ToDouble(par1);
-            Double Par2 = Convert.ToDouble(par2);
-            Double Par3 = Convert.ToDouble(par3);
+        //    ////_ = Nombre;
+        //    //Double Lab1 = Convert.ToDouble(lab1);
+        //    //Double Lab2 = Convert.ToDouble(lab2);
+        //    //Double Lab3 = Convert.ToDouble(lab3);
+        //    //Double Par1 = Convert.ToDouble(par1);
+        //    //Double Par2 = Convert.ToDouble(par2);
+        //    //Double Par3 = Convert.ToDouble(par3);
 
-            ViewBag.Nombre = Nombre;
-            ViewBag.lab1 = (Lab1 * 0.4);
-            ViewBag.lab2 = (Lab2 * 0.4);
-            ViewBag.lab3 = (Lab3 * 0.4);
-            ViewBag.par1 = (Par1 * 0.6);
-            ViewBag.par2 = (Par2 * 0.6);
-            ViewBag.par3 = (Par3 * 0.6);
+        //    ViewBag.Nombre = Nombre;
+        //    ViewBag.lab1 = (Lab1 * 0.4);
+        //    ViewBag.lab2 = (Lab2 * 0.4);
+        //    ViewBag.lab3 = (Lab3 * 0.4);
+        //    ViewBag.par1 = (Par1 * 0.6);
+        //    ViewBag.par2 = (Par2 * 0.6);
+        //    ViewBag.par3 = (Par3 * 0.6);
 
 
 
-            return View();
-        }
+        //    return View();
+        //}
 
     }  
 }
